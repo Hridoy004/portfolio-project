@@ -1,0 +1,154 @@
+* {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #222;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  background-color: rgba(34, 34, 34, 0.25);
+  border-bottom: 1px solid #333;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.nav-left {
+  display: flex;
+}
+
+.logo {
+  border-radius: 15px;
+  margin: 0 1rem;
+}
+
+.nav-title {
+  font-size: 20px;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+.nav-items-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-items {
+  margin: 1rem;
+  list-style-type: none;
+}
+
+.nav-items-links {
+  text-decoration: none;
+}
+
+.nav-items-links:hover {
+  color: #3b82f6;
+}
+
+@media (max-width: 873px) {
+  .navbar-container {
+    display: block;
+  }
+
+  .nav-items-container {
+    padding: 0;
+  }
+}
+
+/* hero section */
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.hero-container .title {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.description {
+  text-align: justify;
+}
+
+.hero-left,
+.hero-right {
+  width: 100%;
+}
+
+/* container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .hero-left {
+    width: 40%;
+  }
+
+  .hero-right {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}

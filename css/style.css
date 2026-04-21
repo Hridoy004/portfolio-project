@@ -1,6 +1,7 @@
 * {
   font-family: "Roboto", sans-serif;
   color: white;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -81,10 +82,11 @@ body {
   min-height: 100vh;
 }
 
-/* Hero image, resume image, certificate logo*/
+/* Hero image, resume image, certificate logo, project*/
 .hero-image,
 .resume-image,
-.certificate-logo {
+.certificate-logo,
+.project-image {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -235,7 +237,8 @@ body {
   height: 3rem;
 }
 
-.certificate-name {
+.certificate-name,
+.project-name {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -245,12 +248,150 @@ body {
 
 .certificate-org-name,
 .certificate-date,
-.certificate-link {
+.certificate-link,
+.project-details,
+.project-link {
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   color: #777;
   margin: 8px 0;
+}
+
+.certificates-link-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificates-link {
+  text-decoration: none;
+}
+
+.certificates-link:hover {
+  text-decoration: underline;
+}
+
+.certificate-btn {
+  padding: 1rem 1.5rem;
+  background-color: #333;
+  border: 2px solid #d5d5d5;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.certificate-btn:hover {
+  background-color: #d5d5d5;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Skill Section */
+.skills-container {
+  min-height: 100vh;
+}
+.skills-sub-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skills-progress-container {
+  margin: 1rem 0;
+}
+
+.skills-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.skill {
+  font-size: 13px;
+}
+
+.percentage {
+  color: #444;
+  font-size: 12px;
+}
+
+.progress {
+  width: 100%;
+  height: 0.5rem;
+  border: 2px solid #444;
+  border-radius: 0.5rem;
+  accent-color: #444;
+}
+
+progress::-webkit-progress-value {
+  background-color: rgb(59, 130, 246);
+}
+
+/* Project section */
+.projects-container {
+  min-height: 100vh;
+  margin-top: 40px;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-list {
+  margin-top: 2rem;
+  border: 1px solid #333;
+  border-radius: 1rem;
+}
+
+.project-image {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.project-name,
+.project-details,
+.project-link {
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+.project-details {
+  padding: 1rem;
+  text-align: justify;
+}
+
+/* contact section */
+.contact-container {
+  margin-top: 4rem;
+  min-height: 100vh;
+}
+
+.contact-info-container {
+  display: grid;
+  grid-template-columns: 33% 1fr;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.contact-info-container a,
+.contact-info-container p {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 /* container */
@@ -260,9 +401,60 @@ body {
   margin-right: auto;
 }
 
+.input-field {
+  background-color: transparent;
+  border: 2px solid #555;
+  border-radius: 2px;
+  width: 90%;
+  padding: 0.675rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.contact-button {
+  border: 2px solid #3b82f6;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.contact-button:hover {
+  cursor: pointer;
+  background-color: #3b82f6;
+}
+
+/* footer section */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0.75rem;
+  border-top: 1px solid #333;
+}
+
+.footer-link {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+}
+@media (min-width: 576px) {
+  project-container {
+    display: block;
   }
 }
 
@@ -283,6 +475,24 @@ body {
 
   .hero-right {
     width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    background-color: rgba(34, 34, 34, 1);
+  }
+  .resume-sub-container,
+  .resume-list,
+  .certificates-sub-container,
+  .skills-sub-container,
+  .contact-sub-container,
+  .contact-info-container {
+    display: block;
+  }
+
+  .project-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
